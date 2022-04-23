@@ -1,0 +1,119 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+  int n,d,r,rev,d1,a,b,m,t,s1=0;
+  int  sqrNum, temp,s=0,c = 0;
+  char ch;
+  printf("Welcome to Number Programs \n\n ");
+  printf("Enter 1 for NEON NUMBER \n");
+  printf(" Enter 2 for AUTOMORPHIC NUMBER \n ");
+  printf("Enter 3 for FIBONACCI SERIES \n ");
+  printf("Enter 4 for PRONIC NUMBER \n ");
+  printf("Enter 5 for NIVEN NUMBER \n \n ");
+   printf("Enter Choice\n");
+  scanf("%i",&t);
+ 
+  switch(t)
+    {
+      case 1: printf("Neon Number \n\n");
+             printf("Enter a Number \n ");
+             scanf("%i",&n);
+             m=n;
+             
+             while(n>0)
+             {
+               d=n%10;
+               s1=s1+d;
+               n=n/10;
+             }
+             if(s1==m)
+             {
+               printf("Neon Number");
+             }
+            else
+            {
+               printf("Not a Neon Number");
+            }
+            break;
+      
+      case 2:   // AUTOMORPHIC NUMBER
+              printf("Automorphic Number\n\n");
+        printf("Enter choice \n");
+              scanf("%i",&n);
+               temp=n;        
+              while (temp > 0)
+              {
+                temp=temp/10;
+                 c++;
+             }
+             sqrNum = n * n;
+             s= sqrNum%(int)pow(10, c);
+             if(s==n)
+             {
+                printf("Automorphic number");
+             }
+              else
+             {
+                printf("Not an automorphic number");
+             }
+             break; 
+      
+      case 3: // FIBONACCI SERIES
+              printf("FIBONACCI SERIES\n\n");
+             a=1,b=-1,c=0;
+        printf("Enter limit \n");
+             scanf("%i",&n);
+        printf(" Series:  \n");
+            for(int i=0;i<=n;i++)
+            {
+               c=a+b;
+              printf("%i",c);
+              a=b;
+              b=c;
+            }
+             break; 
+      
+      case 4: //PRONIC NUMBER
+             printf("Pronic Number \n\n");
+             printf("Enter a Number \n ");
+             scanf("%i",&n);
+             m=n;
+            for(int i=0;i<=n;i++)
+            {
+              if(i*(i+1)==m)
+              {
+                printf("Pronic Number");break;
+              }
+              else
+              {
+                 printf("Not a Pronic Number");
+                break;     
+              }
+            }
+             
+      case 5: printf("Niven Number \n\n");
+             printf("Enter a Number \n ");
+             scanf("%i",&n);
+             m=n;
+             while(n>0)
+             {
+               d=n%10;
+               s=s+d;
+               n=n/10;
+             }
+             if(m%s==0)
+             {
+               printf("Niven Number");
+             }
+            else
+            {
+               printf("Not a Niven Number");
+            }
+              break;
+      default:
+            printf("Required Number Program not specified");
+      exit(0);
+    }
+  return 0;
+}
